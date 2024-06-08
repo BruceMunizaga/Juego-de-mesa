@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Taller-2-PPA/Packages/com.ptc.vuforia.engine-10.22.5.tgz filter=lfs diff=lfs merge=lfs -text
+GithubProyect/Taller-2-PPA/Packages/com.ptc.vuforia.engine-10.22.5.tgz filter=lfs diff=lfs merge=lfs -text
+Packages/com.ptc.vuforia.engine-10.22.5.tgz filter=lfs diff=lfs merge=lfs -text
