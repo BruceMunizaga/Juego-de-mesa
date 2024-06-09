@@ -5,38 +5,53 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    [SerializeField]CasillaFinal casillaFinal = new CasillaFinal();
-    [SerializeField]Dado dado = new Dado();
-    [SerializeField]Tablero tablero = new Tablero();
+    //Nombre del jugador
     [SerializeField]string nombreJugador;
-    [SerializeField]Vector3 posicionActual;
-    [SerializeField]int turnosJugados;
 
-    public Jugador(string nuevoNombre, Vector3 nuevaPosicion){
+    //Turnos que lleva el jugador
+    int turnosJugados;
+
+    //Posicion actual del jugador
+    int posicionActual = 0;
+
+    //Constructor de la clase
+    public Jugador(string nuevoNombre){
         this.nombreJugador = nuevoNombre;
-        this.posicionActual = nuevaPosicion;
         this.turnosJugados = 0;
     }
 
-    public void Jugar(){
-        IncrementarTurnosJugados();
-        int nuevaPosicion = dado.lanzarDado();
-        SetPosicionActual(tablero.getPosicion(nuevaPosicion));
-
-        if(this.posicionActual == casillaFinal.getPosicion()){
-            TerminarJuego();
-        }
-    }
-
+    /*
+    metodo que incrementa los turnos jugados
+    */
     public void IncrementarTurnosJugados(){
         this.turnosJugados++;
     }
 
-    public void SetPosicionActual(Vector3 nuevaPosicion){
+    /*
+    Funcion que comparte los turnos jugados
+    */
+    public int GetTurnosJugados(){
+        return this.turnosJugados;
+    }
+
+    /*
+    Funcion que comparte la posicion actual del jugador
+    */
+    public int GetPosicionActual(){
+        return this.posicionActual;
+    }
+
+    /*
+    Metodo que cambia la posicion del jugador
+    */
+    public void SetPosicionActual(int nuevaPosicion){
         this.posicionActual = nuevaPosicion;
     }
 
-    public void TerminarJuego(){
-        casillaFinal.DesplegarfinalJuego(this.nombreJugador, this.turnosJugados);
+    /*
+    Funcion que comparte el nombre del jugador 
+    */
+    public string GetNombre(){
+        return this.nombreJugador;
     }
 }

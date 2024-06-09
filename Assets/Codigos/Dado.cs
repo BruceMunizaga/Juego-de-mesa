@@ -5,11 +5,12 @@ using System;
 
 public class Dado : MonoBehaviour
 {
-    [SerializeField] public int numero = 0;
+    //Variable que alojara el numero que de el dado
+    int numero = 0;
 
-    void Start(){
-        lanzarDado();
-    }
+    /*
+    Funcion que retorna un numero aleatorio entre el 1 y el 6 
+    */
     public int lanzarDado(){
         // Crea una instancia de la clase Random
          System.Random random = new System.Random();
